@@ -1,60 +1,25 @@
-body {
-  background-color: rgb(100, 209, 242);
-  margin: 30px;
-}
-body {
+document.addEventListener('DOMContentLoaded', function() {
+  const assessBtn = document.getElementById('assessBtn');
+  const assessmentResult = document.getElementById('Result');
 
-  background-color: #82c0f6;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-}
+  assessBtn.addEventListener('click', VotingEligibility);
 
-.application-wrapper {
-  background-color: #ffffff;
-  padding: 35px;
-  text-align: center;
-  max-width: 450px;
-  width: 90%;
-}
+  function VotingEligibility() {
+      let userYears = prompt("Please enter your age in years:");
+      
+      if (isNaN(userYears) || parseInt(userYears) < 0) {
+          displayResult("Invalid age. Please enter a positive number.");
+      } else {
+          let ageValue = parseInt(userYears);
+          if (ageValue >= 18) {
+              displayResult("You are eligible to  vote.");
+          } else {
+              displayResult("You aren't yet eligible to vote.");
+          }
+      }
+  }
 
-h1 {
-  color: #1a3a5a;
-  font-size: 26px;
-  margin-bottom: 30px;
-}
-
-#assessBtn {
-  background-color: #4a90e2;
-  color: white;
-  border: none;
-  padding: 14px 28px;
-  font-size: 18px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.1s ease;
-}
-
-#assessBtn:hover {
-  background-color: #357abd;
-}
-
-#Result {
-  margin-top: 30px;
-  font-size: 20px;
-  font-weight: 500;
-  color: #050708;
-}
-button {
-  width: 130px;
-  padding: 10px 15px;
-  font-size: 18px;
-  margin: 7px;
-  border-radius: 30px;
-}
-
-button:hover {
-  background-color: rgb(228, 210, 93);
-}
+  function displayResult(message) {
+      assessmentResult.textContent = message;
+  }
+});
