@@ -1,0 +1,40 @@
+body {
+   
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #886484;
+}
+.container {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+h1 {
+  color: #100d0d;
+}
+#numberInput {
+  padding: 0.5rem;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 200px;
+  margin-bottom: 1rem;
+}
+
+#generateBtn {
+  padding: 0.5rem 0.8rem;
+  font-size: 1rem;
+  background-color: #4CAF50;
+  color: white;
+  
+}
+#generateBtn:hover {
+  background-color: #45a049;
+}
+#result {
+ 
+  text-align: left;
+  white-space: pre-wrap;
+}
